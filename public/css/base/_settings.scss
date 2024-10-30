@@ -1,0 +1,46 @@
+/*** Color Pallete ***/
+$full-screen-modal: #EBEBEB;
+
+// Primary Color Pallete (Write theme color variables here)
+
+
+// Secondary Color Pallete (Write theme color variables here)
+
+
+// Misc Colors
+$pure-white: #fff;
+$pure-black: #000;
+
+// z-index (Elements are pre-inserted as examples. Remove and replace with your own elements.)
+// Source: https://jonsuh.com/blog/organizing-z-index-with-sass/
+$z-index: (
+  modal              : 200,
+  navigation         : 100,
+  footer             : 90,
+  triangle           : 60,
+  navigation-rainbow : 50,
+  share-type         : 41,
+  share              : 40,
+);
+
+/** Layout Variables **/
+
+// Screen Widths
+// -- (Values are hard-coded and do not need to be changed. Only change these values if you have a reason to)
+$comp-fullscreen: 1920px;
+$father-son-hide: 1280px;
+$laptop-width: 1280px;
+$tablet-horizontal-width: 1024px;
+$tablet-vertical-width: 766px;
+$iphone-horizontal-width: 667px;
+$generic-mobile: 600px;
+$iphone-vertical-width: 375px;
+$smallest-phone-size: 320px;
+
+// Layout Margin/Padding (Change these values as you need to)
+$desktop-edge-gap: 60px;
+$tablet-edge-gap: 35px;
+$mobile-edge-gap: 20px;
+
+// Content Widths (Change to the max-width of the comp)
+$content-max-width: inherit;

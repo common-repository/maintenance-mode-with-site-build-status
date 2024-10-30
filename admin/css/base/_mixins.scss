@@ -1,0 +1,446 @@
+/* Responsive Mixins */
+
+// Source: https://css-tricks.com/snippets/css/fluid-typography/
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size, $set-base-font: true) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+
+      @if ($set-base-font) {
+        font-size: $min-font-size;
+      }
+
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{stripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+// Source: https://css-tricks.com/snippets/css/fluid-typography/
+@mixin fluid-type-important($min-vw, $max-vw, $min-font-size, $max-font-size, $set-base-font: true) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+
+      @if ($set-base-font) {
+        font-size: $min-font-size !important;
+      }
+
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{stripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)})) !important;
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size !important;
+      }
+    }
+  }
+}
+
+// Based on fluid-type: Source: https://css-tricks.com/snippets/css/fluid-typography/
+@mixin fluid-transition($min-vw, $max-vw, $min-size, $max-size, $css-property, $set-base-font: true) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-size);
+  $u4: unit($max-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+
+      @if ($set-base-font) {
+        #{$css-property}: $min-size;
+      }
+
+      @media screen and (min-width: $min-vw) {
+        #{$css-property}: calc(#{$min-size} + #{stripUnit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        #{$css-property}: $max-size;
+      }
+    }
+  }
+}
+
+// Based on fluid-type: Source: https://css-tricks.com/snippets/css/fluid-typography/
+@mixin fluid-transition-important($min-vw, $max-vw, $min-size, $max-size, $css-property, $set-base-font: true) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-size);
+  $u4: unit($max-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+
+      @if ($set-base-font) {
+        #{$css-property}: $min-size !important;
+      }
+
+      @media screen and (min-width: $min-vw) {
+        #{$css-property}: calc(#{$min-size} + #{stripUnit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)})) !important;
+      }
+      @media screen and (min-width: $max-vw) {
+        #{$css-property}: $max-size !important;
+      }
+    }
+  }
+}
+
+// Source: http://www.developerdrive.com/2018/05/10-best-sass-mixins-for-web-developers/
+@mixin aspect-ratio($width, $height) {
+   position: relative;
+   &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: ($height / $width) * 100%;
+   }
+   > .inner-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+   }
+}
+
+// Source: https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+/* Positioning */
+
+// Source: http://www.developerdrive.com/2018/05/10-best-sass-mixins-for-web-developers/
+@mixin abs-position ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+   position: absolute;
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+}
+@mixin rel-position ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+   position: relative;
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+}
+
+// Source: https://medium.com/@justinbrazeau/10-useful-sass-mixins-for-automation-833cdee9d69b
+// Define vertical, horizontal, or both position
+@mixin abs-center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Source: https://medium.com/@justinbrazeau/10-useful-sass-mixins-for-automation-833cdee9d69b
+// Clearfix mixin (use @extend %clearfix instead of @include clearfix)
+// Example:
+// .container-with-floated-children {
+//   @extend %clearfix;
+// }
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Hide visually and from screenreaders, but maintain layout
+@mixin invisible {
+	visibility: hidden;
+}
+
+/* Margin/Padding Mixins */
+
+// Source: https://github.com/engageinteractive/core/blob/master/src/scss/utility/_mixins.scss
+@mixin content-margins($selector: '> *', $last-child: false) {
+	@if not $selector {
+		$selector: '&';
+	}
+
+	#{unquote($selector)} {
+		&:first-child { margin-top: 0; }
+		@if $last-child {
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+}
+
+// Source: https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+/* Styling */
+
+// Source: http://www.developerdrive.com/2018/05/10-best-sass-mixins-for-web-developers/
+@mixin text-shorten {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+// Source: https://medium.com/@justinbrazeau/10-useful-sass-mixins-for-automation-833cdee9d69b
+@mixin background-gradient($start-color, $end-color, $orientation) {
+    background: $start-color;
+
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+/* Animation */
+
+// Source: https://medium.com/@justinbrazeau/10-useful-sass-mixins-for-automation-833cdee9d69b
+//Animation mixin setup
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+/* Screen Reader Mixins */
+
+/* Source: https://github.com/engageinteractive/core/blob/master/src/scss/utility/_mixins.scss */
+// Hide only visually, but have it available for screenreaders
+@mixin vh($focusable: false) {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	@if $focusable {
+		@include vh-focusable;
+	}
+}
+
+@mixin vh-reset {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+// Allow the element to be focusable when navigated to via the keyboard
+@mixin vh-focusable {
+	&:active,
+	&:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+/* Utility Mixins */
+
+// Source: https://coderwall.com/p/4hd9bw/easy-embedding-of-web-fonts-using-a-sass-mixin
+@mixin fontFace($family, $src, $style: normal, $weight: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$src}.eot'); // IE9 compat
+		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+      url('#{$src}.woff2') format('woff2'), // standards
+			url('#{$src}.woff') format('woff'), // standards
+			url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+			url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+// Source: http://www.developerdrive.com/2018/05/10-best-sass-mixins-for-web-developers/
+@mixin retina-image($image, $width, $height) {
+   @media (min--moz-device-pixel-ratio: 1.3),
+   (-o-min-device-pixel-ratio: 2.6/2),
+   (-webkit-min-device-pixel-ratio: 1.3),
+   (min-device-pixel-ratio: 1.3),
+   (min-resolution: 1.3dppx) {
+       background-image: url($image);
+       background-size: $width $height;
+   }
+}
+
+// Source: http://www.developerdrive.com/2018/05/10-best-sass-mixins-for-web-developers/
+@mixin css3-prefix($prop, $value) {
+   -webkit-#{$prop}: #{$value};
+   -moz-#{$prop}: #{$value};
+   -ms-#{$prop}: #{$value};
+   -o-#{$prop}: #{$value};
+   #{$prop}: #{$value};
+}
+
+// Source: https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// Source: https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+// Max's Mixins
+@mixin generate-overlay($background, $position: relative) {
+  position: #{$position};
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $background;
+  }
+}
+
+// Same as above, but has to be applied to &:before. Keep around for legacy code.
+@mixin generateOverlay($background) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $background;
+}
+
+@mixin responsive-padding {
+  padding-left: $desktop-edge-gap;
+  padding-right: $desktop-edge-gap;
+
+  @include tablet-v {
+    padding-left: $tablet-edge-gap;
+    padding-right: $tablet-edge-gap;
+  }
+
+  @include iphone-v {
+    padding-left: $mobile-edge-gap;
+    padding-right: $mobile-edge-gap;
+  }
+}
+
+@mixin margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin comp-max-width {
+  max-width: calc(#{$content-max-width} + (#{$desktop-edge-gap * 2}));
+  @include margin-auto;
+  @include responsive-padding;
+}
+
+@mixin group-spacing($property, $spacing-left, $spacing-right: $spacing-left) {
+  #{$property}-left: #{$spacing-left};
+  #{$property}-right: #{$spacing-right};
+
+  &:first-child {
+    #{$property}-left: 0;
+  }
+  &:last-child {
+    #{$property}-right: 0;
+  }
+}
+
+@mixin no-first-last($property, $value) {
+  #{$property}: #{$value};
+
+  &:first-child {
+    #{$property}: 0;
+  }
+  &:last-child {
+    #{$property}: 0;
+  }
+}

@@ -1,0 +1,22 @@
+// Site Build Stage module
+.site-build-stage {
+  display: flex;
+  align-items: center;
+
+  // All children of site-build-stage
+  * {
+    @include group-spacing(margin, 3px);
+  }
+
+  .remove-site-build-stage {
+    margin-left: 5px;
+  }
+}
+
+// Define Site Build Stages section
+.define-site-build-stages-container {
+  
+  .add-site-build-stage {
+    margin-top: 5px;
+  }
+}

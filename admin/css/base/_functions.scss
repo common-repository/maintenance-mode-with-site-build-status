@@ -1,0 +1,13 @@
+//Source: https://css-tricks.com/snippets/sass/strip-unit-function/
+@function stripUnit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// Linear Calculate (based on fluid typography: Source: https://css-tricks.com/snippets/css/fluid-typography/)
+@function linearCalculate($min-vw, $max-vw, $min-size, $max-size) {
+  @return calc(#{$min-size} + #{stripUnit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{stripUnit($max-vw - $min-vw)}));
+}

@@ -1,0 +1,49 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+// Settings
+@import './base/settings';
+@import './base/media-queries';
+@import './base/functions';
+@import './base/mixins';
+
+// Enclosed with body class so CSS only effects plugin page
+html.mm-site-build-status-html,
+body.mm-site-build-status {
+  height: auto;
+}
+
+html.mm-site-build-status-html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body.mm-site-build-status {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+
+  // Base
+  @import './base/base';
+
+  // Components
+  @import './components/layout';
+  @import './components/modal';
+  @import './components/images';
+  @import './components/headings';
+  @import './components/tables';
+  @import './components/misc';
+  @import './components/tooltips';
+}

@@ -1,0 +1,42 @@
+@mixin laptop($mod: 0) {
+  @media (max-width: #{$laptop-width + $mod}) {
+    @content;
+  }
+}
+
+@mixin tablet-h($mod: 0) {
+  @media screen and (max-width: #{$tablet-horizontal-width + $mod}) {
+    @content;
+  }
+}
+
+@mixin tablet-v($mod: 0) {
+  @media (max-width: #{$tablet-vertical-width + $mod}) {
+    @content;
+  }
+}
+
+@mixin iphone-h($mod: 0) {
+  @media screen and (max-width: #{$iphone-horizontal-width + $mod}) {
+    @content;
+  }
+}
+
+@mixin generic-mobile($mod: 0) {
+  @media (max-width: #{$generic-mobile + $mod}) {
+    @content;
+  }
+}
+
+@mixin iphone-v($mod: 0) {
+  @media (max-width: #{$iphone-vertical-width + $mod}) {
+    @content;
+  }
+}
+
+// Misc Media Queries
+@mixin father-son-hide {
+  @media (max-width: #{$father-son-hide}) {
+    @content;
+  }
+}

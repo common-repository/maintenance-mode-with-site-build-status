@@ -1,0 +1,78 @@
+$sbs-table-border-color: #EBEBEB;
+$sbs-table-status-text-align: center;
+$sbs-table-status-width: 20%;
+$sbs-table-stage-width: 80%;
+
+.sbs-table {
+
+/**************************************************
+ * Flex box layout
+***************************************************/
+  &__row {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    @include tablet-v {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+/**************************************************
+ * END Flex box layout
+***************************************************/
+
+  &__column-title-container {
+
+    @include tablet-v {
+      display: none;
+    }
+  }
+
+  &__column-title {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    &.status {
+      text-align: $sbs-table-status-text-align;
+    }
+
+  * {
+    margin: 0;
+  }
+
+    &-skin {
+      border-bottom: solid 1px $pure-black;
+      text-transform: uppercase;
+      font-weight: 200;
+
+      h4 {
+        font-weight: 200;
+      }
+    }
+  }
+
+  &__column-cell-container {
+
+    @include tablet-v {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__column-cell {
+    display: inline-block;
+
+    @include tablet-v {
+      flex-basis: auto !important;
+    }
+
+    &.status {
+      text-align: $sbs-table-status-text-align;
+      font-size: 26px;
+    }
+  }
+}

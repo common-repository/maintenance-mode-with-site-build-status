@@ -1,0 +1,133 @@
+# Copyright (C) 2019 Maintenance Mode with Site Build Status
+# This file is distributed under the same license as the Maintenance Mode with Site Build Status package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance Mode with Site Build Status 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mm-site-build-"
+"status\n"
+"POT-Creation-Date: 2019-02-01 16:23-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-02-01 16:36-0500\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: ..\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-mm-site-build-status-admin.php:122
+msgid "Settings"
+msgstr "Réglages"
+
+#: admin/class-mm-site-build-status-general-settings.php:23
+msgid "General Options"
+msgstr "Options générales"
+
+#: admin/class-mm-site-build-status-general-settings.php:36
+msgid "On/Off"
+msgstr "Activé / désactivé"
+
+#: admin/class-mm-site-build-status-general-settings.php:37
+msgid "Client Name"
+msgstr "Nom du client"
+
+#: admin/class-mm-site-build-status-general-settings.php:38
+msgid "Client Logo"
+msgstr "Logo du client"
+
+#: admin/class-mm-site-build-status-general-settings.php:39
+msgid "Define Site Build Stages"
+msgstr "Décrire les étapes du projet"
+
+#: admin/class-mm-site-build-status-general-settings.php:40
+msgid "Current Live Site"
+msgstr "Site actuel"
+
+#: admin/class-mm-site-build-status-general-settings.php:41
+msgid "Background Image"
+msgstr "Image d’arrière-plan"
+
+#: admin/class-mm-site-build-status-general-settings.php:45
+msgid "Customize your general settings."
+msgstr "Personnaliser les paramètres généraux."
+
+#: admin/class-mm-site-build-status-general-settings.php:116
+#: admin/class-mm-site-build-status-general-settings.php:184
+msgid "Add Stage"
+msgstr "Ajouter une étape"
+
+#: admin/class-mm-site-build-status-general-settings.php:172
+msgid "Pending"
+msgstr "En attendant"
+
+#: admin/class-mm-site-build-status-general-settings.php:176
+msgid "In Progress"
+msgstr "En cours"
+
+#: admin/class-mm-site-build-status-general-settings.php:180
+msgid "Completed"
+msgstr "Terminé"
+
+#: admin/class-mm-site-build-status-general-settings.php:207
+msgid "https://www.nameofcurrentlivesite.com"
+msgstr "https://www.nomdusitedevieactuel.com"
+
+#: admin/class-mm-site-build-status-general-settings.php:262
+msgid "Select an image"
+msgstr "Sélectionner une image"
+
+#. Plugin Name of the plugin/theme
+#: admin/partials/mm-site-build-status-admin-display.php:18
+msgid "Maintenance Mode with Site Build Status"
+msgstr "Mode de maintenance avec statut de création du site"
+
+#: admin/partials/mm-site-build-status-admin-display.php:26
+msgid "Save Changes"
+msgstr "Sauvegarder les modifications"
+
+#: admin/partials/mm-site-build-status-admin-display.php:27
+msgid "Please clear your websites cache for your changes to take effect."
+msgstr ""
+"Veuillez vider le cache de votre site Web pour que vos modifications "
+"prennent effet."
+
+#: public/partials/templates/mm-basic.php:20
+msgid "Site Build Status for "
+msgstr "Statut de construction du site pour "
+
+#: public/partials/templates/mm-basic.php:31
+msgid "Status"
+msgstr "Statut"
+
+#: public/partials/templates/mm-basic.php:37
+msgid "Stage"
+msgstr "Étape"
+
+#: public/partials/templates/mm-basic.php:70
+msgid "Click here to visit the current website"
+msgstr "Cliquez ici pour visiter le site actuel"
+
+#. Plugin URI of the plugin/theme
+msgid "http://live-maintenance-mode-with-site-build-status.pantheonsite.io/"
+msgstr ""
+"http://live-maintenance-mode-with-site-build-status.pantheonsite.io/"
+
+#. Description of the plugin/theme
+msgid ""
+"Displays a maintenance mode page for website development with additional "
+"site build progress information for your clients."
+msgstr ""
+"Affiche une page en mode maintenance pour le développement de sites Web "
+"avec des informations supplémentaires sur la progression de la création "
+"de sites pour vos clients."
+
+#. Author of the plugin/theme
+msgid "Red Earth Design"
+msgstr "Red Earth Design"
+
+#. Author URI of the plugin/theme
+msgid "https://redearthdesign.com/"
+msgstr "https://redearthdesign.com/"

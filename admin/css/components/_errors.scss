@@ -1,0 +1,12 @@
+.red-error-message {
+  color: $red-default-error-color;
+  margin-top: 5px;
+
+  &:before {
+    content: "*";
+  }
+}
+
+input.red-error {
+  border-color: $red-default-error-color;
+}

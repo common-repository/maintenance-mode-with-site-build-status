@@ -1,0 +1,8 @@
+$mm-preview-image--max-width: 300px;
+img.mm-preview-image {
+  max-width: $mm-preview-image--max-width;
+
+  &[src=""] {
+    display: none;
+  }
+}

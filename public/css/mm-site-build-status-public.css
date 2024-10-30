@@ -1,0 +1,212 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+/*** Color Pallete ***/
+/** Layout Variables **/
+/* Responsive Mixins */
+/* Positioning */
+/* Margin/Padding Mixins */
+/* Styling */
+/* Animation */
+/* Screen Reader Mixins */
+/* Source: https://github.com/engageinteractive/core/blob/master/src/scss/utility/_mixins.scss */
+/* Utility Mixins */
+html.mm-site-build-status-html, body.mm-site-build-status {
+  height: auto;
+}
+html.mm-site-build-status-html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+body.mm-site-build-status {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+}
+body.mm-site-build-status h1 {
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+}
+body.mm-site-build-status h1.page-title-heading:before {
+  content: unset;
+}
+body.mm-site-build-status p, body.mm-site-build-status li {
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+}
+body.mm-site-build-status a {
+  color: #000;
+}
+body.mm-site-build-status a:link, body.mm-site-build-status a:visited {
+  color: #000;
+}
+body.mm-site-build-status a:hover, body.mm-site-build-status a:active {
+  color: #010101;
+}
+body.mm-site-build-status .fullscreen {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+body.mm-site-build-status .flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.mm-site-build-status .main-background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body.mm-site-build-status .fullscreen-modal {
+  min-height: 75%;
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 766px) {
+  body.mm-site-build-status .fullscreen-modal {
+    width: 100%;
+  }
+}
+body.mm-site-build-status .fullscreen-modal-skin {
+  background-color: rgba(235, 235, 235, .85);
+}
+body.mm-site-build-status .fullscreen-modal-content-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  padding-bottom: 70px;
+}
+@media (max-width: 375px) {
+  body.mm-site-build-status .fullscreen-modal-content-container {
+    padding-bottom: 90px;
+  }
+}
+body.mm-site-build-status .client-logo {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: 100px;
+}
+body.mm-site-build-status .page-title-heading {
+  padding: 0;
+  margin: 35px 0;
+  text-align: center;
+  font-weight: 200;
+}
+body.mm-site-build-status .page-title-heading:before {
+  content: unset;
+}
+body.mm-site-build-status .sbs-table {
+  /**************************************************
+   * Flex box layout
+   ***************************************************/
+  /**************************************************
+   * END Flex box layout
+   ***************************************************/
+}
+body.mm-site-build-status .sbs-table__row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+@media (max-width: 766px) {
+  body.mm-site-build-status .sbs-table__row {
+    margin-bottom: 50px;
+  }
+  body.mm-site-build-status .sbs-table__row:last-child {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 766px) {
+  body.mm-site-build-status .sbs-table__column-title-container {
+    display: none;
+  }
+}
+body.mm-site-build-status .sbs-table__column-title {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+body.mm-site-build-status .sbs-table__column-title.status {
+  text-align: center;
+}
+body.mm-site-build-status .sbs-table__column-title * {
+  margin: 0;
+}
+body.mm-site-build-status .sbs-table__column-title-skin {
+  border-bottom: solid 1px #000;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+body.mm-site-build-status .sbs-table__column-title-skin h4 {
+  font-weight: 200;
+}
+@media (max-width: 766px) {
+  body.mm-site-build-status .sbs-table__column-cell-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+body.mm-site-build-status .sbs-table__column-cell {
+  display: inline-block;
+}
+@media (max-width: 766px) {
+  body.mm-site-build-status .sbs-table__column-cell {
+    flex-basis: auto !important;
+  }
+}
+body.mm-site-build-status .sbs-table__column-cell.status {
+  text-align: center;
+  font-size: 26px;
+}
+body.mm-site-build-status .current-live-site-url {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+body.mm-site-build-status .tooltip {
+  position: relative;
+  display: inline-block;
+}
+body.mm-site-build-status .tooltip__text {
+  visibility: hidden;
+  min-width: 180px;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  /* Position the tooltip */
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1;
+  font-size: 14px;
+}
+@media (max-width: 500px) {
+  body.mm-site-build-status .tooltip__text {
+    min-width: 100px;
+  }
+}
+body.mm-site-build-status .tooltip:hover, body.mm-site-build-status .tooltip:focus {
+  cursor: pointer;
+}
+body.mm-site-build-status .tooltip:hover .tooltip__text, body.mm-site-build-status .tooltip:focus .tooltip__text {
+  visibility: visible;
+}
+/*# sourceMappingURL=mm-site-build-status-public.css.map */

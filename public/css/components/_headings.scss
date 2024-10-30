@@ -1,0 +1,10 @@
+.page-title-heading {
+  padding: 0;
+  margin: 35px 0;
+  text-align: center;
+  font-weight: 200;
+
+  &:before {
+    content: unset;
+  }
+}

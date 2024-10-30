@@ -1,0 +1,80 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+body.toplevel_page_maintenance-mode-site-build-status {
+  /*** Color Pallete ***/
+  /** Layout Variables **/
+  /* Responsive Mixins */
+  /* Positioning */
+  /* Margin/Padding Mixins */
+  /* Styling */
+  /* Animation */
+  /* Screen Reader Mixins */
+  /* Source: https://github.com/engageinteractive/core/blob/master/src/scss/utility/_mixins.scss */
+  /* Utility Mixins */
+}
+body.toplevel_page_maintenance-mode-site-build-status input[type="text"] {
+  width: 350px;
+}
+body.toplevel_page_maintenance-mode-site-build-status .button-primary {
+  display: block;
+}
+body.toplevel_page_maintenance-mode-site-build-status .remove-site-build-stage {
+  font-size: 20px;
+  cursor: pointer;
+}
+body.toplevel_page_maintenance-mode-site-build-status .mm-site-build-status-page-heading {
+  margin-bottom: 1.5em;
+  font-size: 28px;
+}
+body.toplevel_page_maintenance-mode-site-build-status .site-build-stage {
+  display: flex;
+  align-items: center;
+}
+body.toplevel_page_maintenance-mode-site-build-status .site-build-stage * {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+body.toplevel_page_maintenance-mode-site-build-status .site-build-stage *:first-child {
+  margin-left: 0;
+}
+body.toplevel_page_maintenance-mode-site-build-status .site-build-stage *:last-child {
+  margin-right: 0;
+}
+body.toplevel_page_maintenance-mode-site-build-status .site-build-stage .remove-site-build-stage {
+  margin-left: 5px;
+}
+body.toplevel_page_maintenance-mode-site-build-status .define-site-build-stages-container .add-site-build-stage {
+  margin-top: 5px;
+}
+body.toplevel_page_maintenance-mode-site-build-status .admin-footnote {
+  color: #8c8c8c;
+  font-size: 0.9em !important;
+  font-style: italic;
+}
+body.toplevel_page_maintenance-mode-site-build-status .admin-footnote.bold {
+  font-weight: bold;
+  color: #c00;
+  font-size: 1.1em !important;
+}
+body.toplevel_page_maintenance-mode-site-build-status .mm-site-build-form .submit {
+  padding: 0;
+}
+body.toplevel_page_maintenance-mode-site-build-status img.mm-preview-image {
+  max-width: 300px;
+}
+body.toplevel_page_maintenance-mode-site-build-status img.mm-preview-image[src=""] {
+  display: none;
+}
+body.toplevel_page_maintenance-mode-site-build-status .red-error-message {
+  color: #c00;
+  margin-top: 5px;
+}
+body.toplevel_page_maintenance-mode-site-build-status .red-error-message:before {
+  content: "*";
+}
+body.toplevel_page_maintenance-mode-site-build-status input.red-error {
+  border-color: #c00;
+}
+/*# sourceMappingURL=mm-site-build-status-admin.css.map */

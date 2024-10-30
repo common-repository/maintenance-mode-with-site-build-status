@@ -1,0 +1,13 @@
+$admin-footnote-color: #8c8c8c; // Unassuming grey for small footnotes
+
+.admin-footnote {
+  color: $admin-footnote-color;
+  font-size: 0.9em !important;
+  font-style: italic;
+
+  &.bold {
+    font-weight: bold;
+    color: $red-default-error-color;
+    font-size: 1.1em !important;
+  }
+}

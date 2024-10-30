@@ -1,0 +1,26 @@
+.fullscreen-modal {
+  min-height: 75%;
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+  @include tablet-v() {
+    width: 100%;
+  }
+
+  &-skin {
+    background-color: rgba($full-screen-modal, .85);
+  }
+
+  &-content-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    padding-bottom: 70px;
+
+    @include iphone-v {
+      padding-bottom: 90px;
+    }
+  }
+}

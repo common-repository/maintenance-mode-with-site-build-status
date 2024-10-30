@@ -1,0 +1,18 @@
+.fullscreen {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
